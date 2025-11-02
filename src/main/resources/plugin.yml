@@ -1,0 +1,11 @@
+name: RolesPlugin
+version: '1.0'
+main: me.milan.rolesPlugin.RolesPlugin
+api-version: '1.21'
+commands:
+  role:
+    description: Change your role
+    usage: /role <giant|gnome>
+    permission: rolesplugin.role
+    permission-default: true
+    aliases: [roles]
