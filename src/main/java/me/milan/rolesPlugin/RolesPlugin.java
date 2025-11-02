@@ -12,6 +12,17 @@ public final class RolesPlugin extends JavaPlugin {
     @Override
     public void onEnable() {
         getLogger().info("RolesPlugin enabled!");
+
+        // Register command and tab completion
+        if (getCommand("role") != null) {
+            getCommand("role").setExecutor(this);
+            getCommand("role").setTabCompleter((sender, command, alias, args) -> {
+                if (args.length == 1) {
+                    return java.util.List.of("giant", "gnome");
+                }
+                return java.util.Collections.emptyList();
+            });
+        }
     }
 
     @Override
@@ -105,6 +116,11 @@ public final class RolesPlugin extends JavaPlugin {
         if (fallAttr != null) {
             fallAttr.setBaseValue(7); //More step height
         }
+
+        AttributeInstance attAttr = player.getAttribute(Attribute.ATTACK_SPEED);
+        if (attAttr != null) {
+            attAttr.setBaseValue(3); //A little slower attack speed
+        }
     }
 
     private void applyGnomeRole(Player player) {
@@ -123,7 +139,7 @@ public final class RolesPlugin extends JavaPlugin {
 
         AttributeInstance scaleAttr = player.getAttribute(Attribute.SCALE);
         if (scaleAttr != null) {
-            scaleAttr.setBaseValue(0.6); // smaller
+            scaleAttr.setBaseValue(0.5); // smaller
         }
 
         AttributeInstance knockbackAttr = player.getAttribute(Attribute.KNOCKBACK_RESISTANCE);
@@ -154,6 +170,11 @@ public final class RolesPlugin extends JavaPlugin {
         AttributeInstance fallAttr = player.getAttribute(Attribute.SAFE_FALL_DISTANCE);
         if (fallAttr != null) {
             fallAttr.setBaseValue(3); //Normal step height
+        }
+
+        AttributeInstance attAttr = player.getAttribute(Attribute.ATTACK_SPEED);
+        if (attAttr != null) {
+            attAttr.setBaseValue(8); //Double speed
         }
     }
 
