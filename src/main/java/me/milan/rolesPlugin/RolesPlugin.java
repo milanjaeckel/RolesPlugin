@@ -78,13 +78,13 @@ public final class RolesPlugin extends JavaPlugin {
         // Movement speed (vanilla default ~0.1, giants slower)
         AttributeInstance speedAttr = player.getAttribute(Attribute.MOVEMENT_SPEED);
         if (speedAttr != null) {
-            speedAttr.setBaseValue(0.06); // slower than default
+            speedAttr.setBaseValue(0.1); // slower than default
         }
 
         // Scale (use the GENERIC_SCALE attribute if available)
         AttributeInstance scaleAttr = player.getAttribute(Attribute.SCALE);
         if (scaleAttr != null) {
-            scaleAttr.setBaseValue(2.0); // bigger
+            scaleAttr.setBaseValue(1.5); // bigger
         }
 
         AttributeInstance knockbackAttr = player.getAttribute(Attribute.KNOCKBACK_RESISTANCE);
@@ -114,12 +114,17 @@ public final class RolesPlugin extends JavaPlugin {
 
         AttributeInstance fallAttr = player.getAttribute(Attribute.SAFE_FALL_DISTANCE);
         if (fallAttr != null) {
-            fallAttr.setBaseValue(7); //More step height
+            fallAttr.setBaseValue(10); //Safe fall distance
         }
 
         AttributeInstance attAttr = player.getAttribute(Attribute.ATTACK_SPEED);
         if (attAttr != null) {
-            attAttr.setBaseValue(3); //A little slower attack speed
+            attAttr.setBaseValue(4); //A little slower attack speed
+        }
+
+        AttributeInstance attdAttr = player.getAttribute(Attribute.ATTACK_DAMAGE);
+        if (attdAttr != null) {
+            attdAttr.setBaseValue(1.75); //1.75x damage
         }
     }
 
@@ -175,6 +180,11 @@ public final class RolesPlugin extends JavaPlugin {
         AttributeInstance attAttr = player.getAttribute(Attribute.ATTACK_SPEED);
         if (attAttr != null) {
             attAttr.setBaseValue(8); //Double speed
+        }
+
+        AttributeInstance attdAttr = player.getAttribute(Attribute.ATTACK_DAMAGE);
+        if (attdAttr != null) {
+            attdAttr.setBaseValue(1); //1x damage
         }
     }
 
