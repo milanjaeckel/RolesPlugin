@@ -5,7 +5,7 @@ api-version: '1.21'
 commands:
   role:
     description: Change your role
-    usage: /role <giant|gnome>
+    usage: /role <giant|gnome|reset>
     permission: rolesplugin.role
     permission-default: true
     aliases: [roles]
