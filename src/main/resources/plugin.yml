@@ -1,11 +1,32 @@
 name: RolesPlugin
-version: '1.0'
+version: "1.0"
 main: me.milan.rolesPlugin.RolesPlugin
-api-version: '1.21'
+api-version: "1.21"
 commands:
   role:
-    description: Change your role
-    usage: /role <giant|gnome|reset>
+    description: Change your role (or someone else's)
+    usage: /role <giant|gnome|reset> [player]
     permission: rolesplugin.role
     permission-default: true
     aliases: [roles]
+  acceptrole:
+    description: Accept a pending role-swap offer (when you killed someone)
+    usage: /acceptrole
+    permission: rolesplugin.accept
+    permission-default: true
+  declinerole:
+    description: Decline a pending role-swap offer
+    usage: /declinerole
+    permission: rolesplugin.accept
+    permission-default: true
+
+permissions:
+  rolesplugin.role:
+    description: Use /role for self
+    default: true
+  rolesplugin.manage:
+    description: Allow changing other players' roles with /role <role> <player>
+    default: op
+  rolesplugin.accept:
+    description: Allow accepting/declining role swap prompts
+    default: true
