@@ -203,6 +203,7 @@ public final class RolesPlugin extends JavaPlugin implements Listener {
         setAttr(p, Attribute.ATTACK_KNOCKBACK, 0.5);
         setAttr(p, Attribute.BLOCK_BREAK_SPEED, 1);
         setAttr(p, Attribute.SNEAKING_SPEED, 0.3);
+        setAttr(p, Attribute.ATTACK_DAMAGE, 2);
         p.setHealth(Math.min(p.getHealth(), 40.0));
     }
 
@@ -220,6 +221,7 @@ public final class RolesPlugin extends JavaPlugin implements Listener {
         setAttr(p, Attribute.ATTACK_KNOCKBACK, 0);
         setAttr(p, Attribute.BLOCK_BREAK_SPEED, 8);
         setAttr(p, Attribute.SNEAKING_SPEED, 0.6);
+        setAttr(p, Attribute.ATTACK_DAMAGE, 1);
         p.setHealth(Math.min(p.getHealth(), 14.0));
     }
 
@@ -236,6 +238,7 @@ public final class RolesPlugin extends JavaPlugin implements Listener {
         setAttr(p, Attribute.ATTACK_KNOCKBACK, 0);
         setAttr(p, Attribute.BLOCK_BREAK_SPEED, 1);
         setAttr(p, Attribute.SNEAKING_SPEED, 0.3);
+        setAttr(p, Attribute.ATTACK_DAMAGE, 1);
         p.setHealth(Math.min(p.getHealth(), 20.0));
     }
 
