@@ -47,7 +47,7 @@ public final class RolesPlugin extends JavaPlugin implements Listener {
     private File rolesFile;
     private YamlConfiguration rolesCfg;
 
-    private static final long SHOCKWAVE_COOLDOWN_MS = 5_000L;
+    private static final long SHOCKWAVE_COOLDOWN_MS = 15_000L;
     private static final long SWAP_OFFER_MS = 30_000L;
 
     private static class RoleSwapOffer {
@@ -193,17 +193,17 @@ public final class RolesPlugin extends JavaPlugin implements Listener {
         resetPlayer(p);
         setAttr(p, Attribute.MAX_HEALTH, 40.0);
         setAttr(p, Attribute.MOVEMENT_SPEED, 0.1);
-        setAttr(p, Attribute.SCALE, 1.5);
+        setAttr(p, Attribute.SCALE, 1.33);
         setAttr(p, Attribute.STEP_HEIGHT, 1);
         setAttr(p, Attribute.SAFE_FALL_DISTANCE, 10);
-        setAttr(p, Attribute.BLOCK_INTERACTION_RANGE, 10);
-        setAttr(p, Attribute.ENTITY_INTERACTION_RANGE, 10);
+        setAttr(p, Attribute.BLOCK_INTERACTION_RANGE, 6.5);
+        setAttr(p, Attribute.ENTITY_INTERACTION_RANGE, 6.5);
         setAttr(p, Attribute.KNOCKBACK_RESISTANCE, 1);
         setAttr(p, Attribute.EXPLOSION_KNOCKBACK_RESISTANCE, 1);
         setAttr(p, Attribute.ATTACK_KNOCKBACK, 0.5);
         setAttr(p, Attribute.BLOCK_BREAK_SPEED, 1);
         setAttr(p, Attribute.SNEAKING_SPEED, 0.3);
-        setAttr(p, Attribute.ATTACK_DAMAGE, 2);
+        setAttr(p, Attribute.ATTACK_DAMAGE, 2.5);
         p.setHealth(Math.min(p.getHealth(), 40.0));
     }
 
@@ -219,7 +219,7 @@ public final class RolesPlugin extends JavaPlugin implements Listener {
         setAttr(p, Attribute.KNOCKBACK_RESISTANCE, 0);
         setAttr(p, Attribute.EXPLOSION_KNOCKBACK_RESISTANCE, 0);
         setAttr(p, Attribute.ATTACK_KNOCKBACK, 0);
-        setAttr(p, Attribute.BLOCK_BREAK_SPEED, 8);
+        setAttr(p, Attribute.BLOCK_BREAK_SPEED, 2);
         setAttr(p, Attribute.SNEAKING_SPEED, 0.6);
         setAttr(p, Attribute.ATTACK_DAMAGE, 1);
         p.setHealth(Math.min(p.getHealth(), 14.0));
@@ -269,7 +269,7 @@ public final class RolesPlugin extends JavaPlugin implements Listener {
         long now = System.currentTimeMillis();
         Long last = shockwaveCooldowns.get(player.getUniqueId());
         if (last != null && now - last < SHOCKWAVE_COOLDOWN_MS) {
-            long secs = (SHOCKWAVE_COOLDOWN_MS - (now - last)) / 250;
+            long secs = (SHOCKWAVE_COOLDOWN_MS - (now - last)) / 1000;
             player.sendMessage("§cShockwave on cooldown (" + secs + "s)");
             return;
         }
