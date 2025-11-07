@@ -219,7 +219,7 @@ public final class RolesPlugin extends JavaPlugin implements Listener {
         setAttr(p, Attribute.KNOCKBACK_RESISTANCE, 0);
         setAttr(p, Attribute.EXPLOSION_KNOCKBACK_RESISTANCE, 0);
         setAttr(p, Attribute.ATTACK_KNOCKBACK, 0);
-        setAttr(p, Attribute.BLOCK_BREAK_SPEED, 8);
+        setAttr(p, Attribute.BLOCK_BREAK_SPEED, 2);
         setAttr(p, Attribute.SNEAKING_SPEED, 0.6);
         setAttr(p, Attribute.ATTACK_DAMAGE, 1);
         p.setHealth(Math.min(p.getHealth(), 14.0));
