@@ -7,7 +7,6 @@ commands:
     description: Change your role (or someone else's)
     usage: /role <giant|gnome|reset> [player]
     permission: rolesplugin.role
-    permission-default: true
     aliases: [roles]
   acceptrole:
     description: Accept a pending role-swap offer (when you killed someone)
@@ -23,11 +22,10 @@ commands:
 permissions:
   rolesplugin.role:
     description: Use /role for self
-    default: true
+    default: op
   rolesplugin.manage:
     description: Allow changing other players' roles with /role <role> <player>
     default: op
   rolesplugin.accept:
     description: Allow accepting/declining role swap prompts
     default: true
-
